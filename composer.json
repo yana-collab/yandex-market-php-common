@@ -1,0 +1,28 @@
+{
+  "name": "nixsolutions/yandex-php-common",
+  "description": "Yandex PHP Common is a library that provides base SDK functionality.",
+  "keywords":["yandex","sdk"],
+  "type":"library",
+  "license": "MIT",
+  "minimum-stability": "dev",
+  "require": {
+    "guzzlehttp/guzzle": "^6.3"
+  },
+  "require-dev": {
+    "squizlabs/php_codesniffer": "^3.0",
+    "php-coveralls/php-coveralls": "^2.0",
+    "phpunit/phpunit": "~5.0"
+  },
+  "authors": [
+    {
+      "name": "Kirill Litvinov",
+      "email": "Kirill.Litvinov@nixsolutions.com"
+    }
+  ],
+  "autoload": {
+    "psr-0": {
+      "Yandex": "src/",
+      "Yandex\\Tests": "tests/"
+    }
+  }
+}
