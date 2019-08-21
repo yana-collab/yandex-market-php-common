@@ -199,7 +199,7 @@ abstract class AbstractServiceClient extends AbstractPackage
     }
 
     /**
-     * @param null $headers
+     * @param array|null $headers
      * @return ClientInterface
      */
     protected function getClient($headers = null)
