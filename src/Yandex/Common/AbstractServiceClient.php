@@ -199,9 +199,10 @@ abstract class AbstractServiceClient extends AbstractPackage
     }
 
     /**
+     * @param null $headers
      * @return ClientInterface
      */
-    protected function getClient()
+    protected function getClient($headers = null)
     {
         if ($this->client === null) {
             $defaultOptions = [
@@ -213,6 +214,9 @@ abstract class AbstractServiceClient extends AbstractPackage
                     'Accept' => '*/*',
                 ],
             ];
+            if ($headers && is_array($headers)) {
+                $defaultOptions["headers"] += $headers;
+            }
             if ($this->getProxy()) {
                 $defaultOptions['proxy'] = $this->getProxy();
             }
