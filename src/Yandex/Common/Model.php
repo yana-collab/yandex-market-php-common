@@ -40,6 +40,13 @@ abstract class Model
     protected $propNameMap = [];
 
     /**
+     * Initial data
+     *
+     * @var array
+     */
+    private $data;
+
+    /**
      * Constructor
      *
      * @param array $data
@@ -47,6 +54,7 @@ abstract class Model
     public function __construct($data = [])
     {
         $this->fromArray($data);
+        $this->data = $data;
     }
 
     /**
@@ -164,5 +172,26 @@ abstract class Model
     public function toJson()
     {
         return json_encode($this->toArrayRecursive($this));
+    }
+
+    /**
+     * Return raw in array response
+     *
+     * @param $key
+     * @return mixed
+     */
+    public function getRaw($key)
+    {
+        return  $this->data[$key];
+    }
+
+    /**
+     * Return array list response
+     *
+     * @return array
+     */
+    public function getRawList()
+    {
+        return  $this->data;
     }
 }
