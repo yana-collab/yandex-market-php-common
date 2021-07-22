@@ -93,6 +93,11 @@ abstract class AbstractServiceClient extends AbstractPackage
     protected $libraryName = 'yandex-php-library';
 
     /**
+     * @var string
+     */
+    protected $userAgent;
+
+    /**
      * @return \DateTime
      */
     public function getExpiresIn()
@@ -296,7 +301,22 @@ abstract class AbstractServiceClient extends AbstractPackage
      */
     public function getUserAgent()
     {
-        return $this->libraryName . '/' . Version::$version;
+        if (!$this->userAgent) {
+            return $this->libraryName . '/' . Version::$version;
+        }
+        return $this->userAgent;
+    }
+
+    /**
+     * @param $userAgent
+     *
+     * @return $this
+     */
+    public function setUserAgent($userAgent)
+    {
+        $this->userAgent = $userAgent;
+
+        return $this;
     }
 
     /**
