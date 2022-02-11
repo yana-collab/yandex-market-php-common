@@ -1,5 +1,5 @@
 {
-  "name": "nixsolutions/yandex-php-common",
+  "name": "yandex-market/yandex-php-common",
   "description": "Yandex PHP Common is a library that provides base SDK functionality.",
   "keywords":["yandex","sdk"],
   "type":"library",
